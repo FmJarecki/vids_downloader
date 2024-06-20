@@ -1,1 +1,1 @@
-A simple app to download and trim YouTube videos using Python and Moviepy.
+A simple app to download and trim YouTube or Twitter videos using Python and Moviepy.
