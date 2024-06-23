@@ -8,9 +8,8 @@ def download_youtube_video(link: str, save_name: str):
                  allow_oauth_cache=True
                  )
 
-    mp4_streams = yt.streams.filter(resolution='720p',
-                                    progressive=True)
-
+    yt.streams.order_by('resolution')
+    mp4_streams = yt.streams.filter(progressive=True)
     d_video = mp4_streams[-1]
 
     d_video.download(output_path=get_videos_folder_path(), filename=f'{save_name}.mp4')
