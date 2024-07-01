@@ -16,6 +16,9 @@ def get_videos_folder_path(folder_name: str = 'videos') -> str:
 def remove_video_files():
     folder_path = get_videos_folder_path()
 
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:
